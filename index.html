@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nurul Fatmawati</title>
+<meta name="description" content="Portfolio dan CV Online Development IT">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ✅ TAMBAHAN ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0b0f1a;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  z-index:1000;
+}
+
+nav h2{
+  color:#00f7ff;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#00f7ff;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:100px 10%;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#00f7ff;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  padding-top:120px;
+}
+
+.avatar{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#00f7ff,#0088ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:110px;
+  color:#000;
+  font-weight:bold;
+  box-shadow:0 0 40px #00f7ff;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+.hero-text span{
+  color:#00f7ff;
+}
+
+.btn{
+  margin-top:20px;
+  display:inline-block;
+  padding:10px 20px;
+  background:#00f7ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+/* ================= SKILLS ================= */
+.skill{margin-bottom:18px;}
+.bar{background:#1c2333;height:10px;border-radius:20px;overflow:hidden;}
+.progress{height:100%;background:#00f7ff;width:0;transition:2s;}
+
+/* ================= TIMELINE ================= */
+.timeline{max-width:800px;margin:auto;}
+.item{
+  margin-bottom:20px;
+  padding:20px;
+  background:#151b2d;
+  border-left:4px solid #00f7ff;
+  border-radius:6px;
+}
+
+/* ================= PROJECT ================= */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#151b2d;
+  padding:12px;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.card img{width:100%;border-radius:8px;}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 15px #00f7ff;
+}
+
+/* ================= CONTACT ICON STYLE (BARU) ================= */
+.contact-icons{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  margin-top:25px;
+}
+
+.contact-item{
+  background:#151b2d;
+  padding:14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition:.3s;
+  font-weight:500;
+}
+
+.contact-item i{
+  color:#00f7ff;
+  font-size:18px;
+}
+
+.contact-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 15px #00f7ff;
+}
+
+/* ================= REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#000;
+  color:#aaa;
+  font-size:14px;
+  margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Nurul Fatmawati</h2>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="avatar">👩‍💻</div>
+  <div class="hero-text">
+    <h1>Hello, Am <span>Nurul Fatmawati</span></h1>
+    <p>Development IT and Design</p>
+    <a href="CV.pdf" class="btn">Download CV</a>
+  </div>
+</section>
+
+<!-- ABOUT --> 
+<section id="about" class="about reveal"> 
+  <h2>About Me</h2> 
+  <p> Bachelor of Informatics Engineering, Universitas Maarif Hasyim Latif Sidoarjo, 2025 
+    with a strong foundation in software development, problem-solving, and system design. 
+    Passionate about building efficient, reliable, and user-friendly digital solutions. 
+    Possess strong analytical thinking, adaptability, and the ability to work both independently and 
+    collaboratively in a team environment. Eager to contribute, continuously learn, 
+    and grow in diverse technology-driven environments. 
+  </p> 
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+   <h2>Skills</h2>
+    <div class="skill">HTML & CSS 
+      <div class="bar">
+        <div class="progress" data-width="95%"></div></div>
+  </div> 
+    
+    <div class="skill">JavaScript, Node.js, Java 
+      <div class="bar"><div class="progress" data-width="87%"></div></div> 
+  </div> 
+  
+  <div class="skill">Python 
+    <div class="bar"><div class="progress" data-width="85%"></div></div> 
+  </div> 
+  
+  <div class="skill">DataBase 
+    <div class="bar"><div class="progress" data-width="80%"></div> </div> 
+  </div>
+
+  <div class="skill">Language English 
+    <div class="bar"><div class="progress" data-width="80%"></div></div> 
+  </div>
+ </section>
+
+ <!-- Education --> 
+ <section id="education" class="timeline reveal"> 
+  <h2>Education</h2> 
+  <div class="item">Bachelor of Informatics Engineering – Universitas Maarif Hasyim Latif Sidoarjo, 2025</div> 
+  <div class="item">Development of an IoT-Based Solar Panel Tracker as a Power Supply for an Automatic Garden Irrigation System (Skripsi)</div> 
+  <div class="item">Computer and Network Engineering – SMK Yapalis Krian (2019)</div> 
+</section> 
+
+<!-- EXPERIENCE --> 
+<section id="experience" class="timeline reveal"> 
+  <h2>Experience</h2> 
+  <div class="item">Freelance Web Developer - Sidoarjo (2024 - Now)</div> 
+  <div class="item">Freelance Graphic Desaign - Sidoarjo (2023 - Now)</div> 
+  <div class="item">PT. Sinar Baja Electric - Sidoarjo (2019 - 2020)</div>
+  <div class="item">PT. Wahana Dwi Mulia - Mojokerto (2020 - 2021)</div>
+  <div class="item">CV. Mitra Budi Jaya - Sidoarjo (2022 - 2023)</div>
+  <div class="item">PT. Kaleng Raya Indonesia - Sidoarjo (Sept 2025 - Jan 2026)</div>
+</section> 
+
+<!-- PROJECT --> 
+<section id="projects" class="reveal"> 
+  <h2>Portfolio</h2> 
+  <div class="projects"> 
+    <div class="card"><img src="Desain.jpg"><p>Desain Banner</p></div> 
+    <div class="card"><img src="project2.png"><p>Website Profile School</p></div> 
+    <div class="card"><img src="project3.png"><p>Web Monitoring IoT</p></div> 
+    <div class="card"><img src="project4.png"><p>UI/UX App</p></div> 
+  </div> 
+</section>
+
+<!-- CONTACT (SUDAH BER-ICON & CLICKABLE) -->
+<section id="contact" class="contact reveal">
+  <h2>Contact</h2>
+
+  <div class="contact-icons">
+
+    <a href="https://wa.me/6285943734618" target="_blank" class="contact-item">
+      <i class="fa-solid fa-phone"></i> WhatsApp
+    </a>
+
+    <a href="mailto:nurulfatmawati046@gmail.com" class="contact-item">
+      <i class="fa-solid fa-envelope"></i> Email
+    </a>
+
+    <a href="https://instagram.com/nurul_fatmawati.22" target="_blank" class="contact-item">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://github.com/nurulfatmawati046-cmyk" target="_blank" class="contact-item">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/nurul-fatmawati-81b960378" target="_blank" class="contact-item">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Nurul Fatmawati. All Rights Reserved.
+</footer>
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add("active");
+    }
+  });
+
+  document.querySelectorAll(".progress").forEach(bar=>{
+    if(bar.getBoundingClientRect().top < window.innerHeight){
+      bar.style.width = bar.dataset.width;
+    }
+  });
+});
+
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
